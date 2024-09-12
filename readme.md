@@ -22,6 +22,10 @@
 
 ## Vídeo do Projeto Funcionando
 
+O projeto do alimentador automático funciona com o acionamento do motor para liberação de comida por 20 segundos em um intervalo de 10 horas. Ou seja, a cada 10 horas o motor é acionado e o alimento é liberado para o animal. Dessa forma, o alimentador tem o motor acionado duas vezes ao dia no período diurno. 
+Entretanto, para exemplificar o funcionamento em vídeo, foi necessário limitar o tempo em que o motor fica em repouso. Dessa forma, ao invés de permanecer desligado pelo intervalo de 10 horas, o tempo foi reduzido para 10 segundos. Portanto, no vídeo apresentado obtemos o acionamento por 20 segundos do motor a cada 10 segundos de repouso.
+
+
 [Assista ao vídeo do projeto](https://youtu.be/W1JV-Qg_nB8)
 
 Este vídeo mostra o funcionamento do alimentador automático para animais de estimação. O sistema é composto por um Arduino Uno, uma fonte de alimentação e um relé, que controlam o motor do alimentador. O projeto foi configurado para alimentar um cão com aproximadamente 140g de ração duas vezes ao dia. Para garantir que o motor seja acionado apenas durante o dia, utilizamos um sensor LDR (Light Dependent Resistor).
