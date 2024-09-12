@@ -9,7 +9,7 @@ int media = 0;// Variável para calcular a média do valor obtido pelo sensor de
 unsigned long releStartTime = 0;  // Marca o tempo de ativação do relé
 unsigned long lastMotorActivationTime = 0;  // Marca a última vez que o motor foi ativado
 const unsigned long motorInterval = 10L * 60L * 60L * 1000L; // 10 horas em milissegundos
-const unsigned long motorDuration = 30000; // Motor ligado por 30 segundos
+const unsigned long motorDuration = 20000; // Motor ligado por 30 segundos
 bool releOn = false;
 
 void setup() {
