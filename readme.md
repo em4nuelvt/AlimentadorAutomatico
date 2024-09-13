@@ -39,7 +39,7 @@
 
   5. **Impressão dos Parâmetros Ajustados**:  Imprime os parâmetros ajustados da função trapezoidal (a, b, c, d e h), que definem o formato da curva e representam os pontos chave no ciclo da luminosidade diária.
 
-- **Execução**: Pode ser executado na paltaforma Google Colab.
+- **Execução**: Pode ser executado na plataforma Google Colab.
 
 
 ### [control.ino](control.ino)
