@@ -8,7 +8,7 @@
 
 ## Arquivos
 
-### ldrGetData.ino
+### [ldrGetData.ino](ldrGetData.ino)
 - **Descrição**: Código Arduino para realizar a leitura de valores de luminosidade usando um sensor LDR ao longo de 24 horas.
 - **Detalhes**: O código `ldrGetData.ino` faz leituras do sensor LDR em intervalos de 30 segundos e armazena esses valores em um vetor para posterior análise. Aqui está como o código funciona:
 
@@ -25,7 +25,7 @@
   6. **Intervalo de Leitura**: O código é configurado para realizar uma nova leitura a cada 30 segundos, o que resulta em 48 leituras no total durante 24 horas.
 - **Execução**: Diretamente na plataforma do Arduino.
 
-### ldrRegression.ipynb
+### [ldrRegression.ipynb](ldrRegression.ipynb)
 - **Descrição**: Código Python para análise e tratamento dos dados coletados do sensor LDR, aplicando regressão e transformada de Fourier.
 - **Detalhes**: Este código executa diversas operações para tratar os dados de luminosidade coletados ao longo de 24 horas pelo sensor LDR:
 
@@ -42,7 +42,7 @@
 - **Execução**: Pode ser executado na paltaforma Google Colab.
 
 
-### control.ino
+### [control.ino](control.ino)
 - **Descrição**: Código de controle do acionamento do motor do alimentador.
 - **Detalhes**: O código `control.ino` é responsável por monitorar o nível de luminosidade através de um sensor LDR e controlar o acionamento do motor que libera ração no alimentador. O funcionamento do código se dá da seguinte forma:
 
