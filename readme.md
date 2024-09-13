@@ -71,3 +71,34 @@ Entretanto, para exemplificar o funcionamento em vídeo, foi necessário limitar
 Este vídeo mostra o funcionamento do alimentador automático para animais de estimação. O sistema é composto por um Arduino Uno, uma fonte de alimentação e um relé, que controlam o motor do alimentador. O projeto foi configurado para alimentar um cão com aproximadamente 90g de ração duas vezes ao dia. Para garantir que o motor seja acionado apenas durante o dia, utilizamos um sensor LDR (Light Dependent Resistor).
 
 No vídeo, o tempo de operação do motor e o intervalo entre os acionamentos foram reduzidos para uma demonstração mais clara e simplificada. O motor é acionado por 20 segundos, tempo calculado para dispensar 90g de ração em um intervalo de 10 horas entre os acionamentos. A visualização em tempo reduzido facilita a compreensão do funcionamento do sistema.
+
+## Galeria de imagens
+<!-- Linha 1 -->
+<p float="left">
+  <img src="imagens/imagem1.jpg" width="200" />
+  <img src="imagens/imagem2.jpg" width="200" />
+</p>
+
+<!-- Linha 2 -->
+<p float="left">
+  <img src="imagens/imagem3.jpg" width="200" />
+  <img src="imagens/imagem4.jpg" width="200" />
+</p>
+
+<!-- Linha 3 -->
+<p float="left">
+  <img src="imagens/imagem5.jpg" width="200" />
+  <img src="imagens/imagem6.jpg" width="200" />
+</p>
+
+<!-- Linha 4 -->
+<p float="left">
+  <img src="imagens/imagem7.jpg" width="200" />
+  <img src="imagens/imagem8.jpg" width="200" />
+</p>
+
+<!-- Linha 5 -->
+<p float="left">
+  <img src="imagens/imagem9.jpg" width="200" />
+  <img src="imagens/imagem10.jpg" width="200" />
+</p>
