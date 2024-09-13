@@ -1,30 +1,30 @@
-const int ldr = A0; // Pino do sensor LDR
-const int relePin = 2;  // Pino de controle do relé
+const int ldr = A0; // pino do sensor LDR
+const int relePin = 2;  // pino de controle do relé
 
-int valorldr = 0; // Declara a variável valorldr como inteiro
-int valoresLDR[3]; // Declara um vetor de 3 posições para armazenar os valores do LDR
-int indice; // Variável para controlar o índice do vetor
-int media = 0;// Variável para calcular a média do valor obtido pelo sensor de luminosidade
+int valorldr = 0; 
+int valoresLDR[3]; 
+int indice; // controlar o índice do vetor
+int media = 0;  //media do valor de luminosidade obtido pelo ldr
 
-unsigned long releStartTime = 0;  // Marca o tempo de ativação do relé
-unsigned long lastMotorActivationTime = 0;  // Marca a última vez que o motor foi ativado
-const unsigned long motorInterval = 10L * 60L * 60L * 1000L; // 10 horas em milissegundos
-const unsigned long motorDuration = 20000; // Motor ligado por 30 segundos
+unsigned long releStartTime = 0;  // marcar o tempo de ativação do relé
+unsigned long lastMotorActivationTime = 0;  // marcar a última vez que o motor foi ativado
+const unsigned long motorInterval = 10 * 60 * 60 * 1000L; //  10 horas intervalo de ativação
+const unsigned long motorDuration = 20000; // motor ligado por 20 segundos
 bool releOn = false;
 
 void setup() {
-  pinMode(ldr, INPUT); // Define ldr (pino analógico A0) como entrada
-  pinMode(relePin, OUTPUT);  // Configura o pino do relé como saída
-  Serial.begin(9600); // Inicializa a comunicação serial
+  pinMode(ldr, INPUT); // define ldr pino doldr como entrada
+  pinMode(relePin, OUTPUT);  // configura o pino do relé como saída
+  Serial.begin(9600); 
   Serial.println("Começou!");
-  digitalWrite(relePin, LOW); // Garante que o relé comece desligado
+  digitalWrite(relePin, LOW); 
   indice = 0;
 }
 
 void loop() {
-  unsigned long currentTime = millis();  // Pega o tempo atual
+  unsigned long currentTime = millis(); 
 
-  // Lê o valor do sensor LDR e armazena no vetor a cada 1 segundo
+  // le o valor do sensor LDR e armazena no vetor a cada 1 segundo
   if (currentTime - releStartTime >= 1000) {
     valorldr = analogRead(ldr);
     valoresLDR[indice] = valorldr;
@@ -32,35 +32,34 @@ void loop() {
     Serial.print("Leitura do LDR: ");
     Serial.println(valoresLDR[indice]);
 
-    if (indice == 2) {
-      // Calcula a média dos valores do LDR
-      media=0
+
+    if (indice == 2) {      
+      media = 0;
       for (int i = 0; i <= 2; i++) {
         media += valoresLDR[i];
       }
       media /= 3;
       Serial.print("Média do LDR: ");
       Serial.println(media);
-      
-      indice = 0; // Reinicia o índice para novas leituras
 
-      // Verifica se a média da luminosidade é maior que 50 e se já passaram 10 horas
-      
+      indice = 0;
     } else {
-      indice++;  // Incrementa o índice para a próxima leitura
+      indice++;  
     }
+
+    // acionamento
     if (media > 50 && (currentTime - lastMotorActivationTime >= motorInterval)) {
-        digitalWrite(relePin, HIGH);  // Liga o motor
-        releOn = true;
-        releStartTime = currentTime;  // Atualiza o tempo de início do motor
-        lastMotorActivationTime = currentTime;  // Marca o tempo da última ativação
-        Serial.println("Motor acionado.");
-      }
+      digitalWrite(relePin, HIGH);  
+      releOn = true;
+      releStartTime = currentTime;  // marca o momento em que o motor foi acionado
+      lastMotorActivationTime = currentTime;  // atualiza o tempo da última ativação
+      Serial.println("Motor acionado.");
+    }
   }
 
-  // Verifica se o motor já ficou ligado por 30 segundos
+  // desacionamento
   if (releOn && (currentTime - releStartTime >= motorDuration)) {
-    digitalWrite(relePin, LOW);  // Desliga o motor
+    digitalWrite(relePin, LOW);  
     releOn = false;
     Serial.println("Motor desligado.");
   }
