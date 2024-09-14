@@ -1,7 +1,7 @@
 
 # Projeto de Alimentador Automático para Pets
 
-## Disciplinas
+## Assuntos abordados
 - Sinais e Sistemas Lineares
 - Eletrônica
 - Microcontroladores/Microprocessadores
